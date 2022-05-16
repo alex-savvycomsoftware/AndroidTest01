@@ -3,6 +3,7 @@ package com.savvycom.base
 import android.os.Bundle
 import android.transition.TransitionInflater
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModel
 import com.savvycom.MainActivity
 import com.savvycom.R
 import com.savvycom.core.base.BaseActivity
@@ -13,7 +14,9 @@ import kotlinx.coroutines.FlowPreview
 
 @FlowPreview
 @ExperimentalCoroutinesApi
-abstract class BaseFragment<DB : ViewDataBinding> : BaseBindingFragment<DB>() {
+abstract class BaseFragment<DB : ViewDataBinding, VM: ViewModel> : BaseBindingFragment<DB>() {
+
+    protected abstract val viewModel : VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

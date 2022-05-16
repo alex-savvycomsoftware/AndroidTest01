@@ -6,6 +6,6 @@
         android:layout_height="match_parent"
         tools:context="com.savvycom.MainActivity"
         android:id="@+id/container"
-        android:background="@color/gray_background">
+        android:background="@color/white">
 
 </FrameLayout>

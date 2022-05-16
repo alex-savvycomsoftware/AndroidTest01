@@ -24,7 +24,7 @@ val appModule = module {
     }
 
     single {
-        provideRetrofit(get(), BuildConfig.BASE_URL, get())
+        provideRetrofit(get(), BuildConfig.BASE_URL)
     }
 
     single {

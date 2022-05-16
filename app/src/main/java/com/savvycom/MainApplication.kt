@@ -1,8 +1,6 @@
 package com.savvycom
 
 import android.app.Application
-import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.Utils
 import com.savvycom.di.module.appModule
 import com.savvycom.di.module.repoModule
 import com.savvycom.di.module.viewModelModule
