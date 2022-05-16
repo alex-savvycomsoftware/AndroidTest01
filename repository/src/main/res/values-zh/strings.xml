@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_internet_connection">No internet connected</string>
+    <string name="error_server_msg">Error connecting to server, please try again later</string>
+    <string name="error_client_timeout_msg">Can\'t connect to server, please check network and try again later</string>
+    <string name="error_occur">An error has occurred</string>
+    <string name="error_server_occur">An error has occurred, please try again later.</string>
+
+    <string name="english">English</string>
+    <string name="china">Chinese</string>
+</resources>

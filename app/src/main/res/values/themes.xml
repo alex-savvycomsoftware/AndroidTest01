@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+        <item name="textAppearanceHeadline1">@style/App_TextAppearanceHeadline1</item>
+        <item name="textAppearanceHeadline2">@style/App_TextAppearanceHeadline2</item>
+        <item name="textAppearanceHeadline3">@style/App_TextAppearanceHeadline3</item>
+        <item name="textAppearanceHeadline4">@style/App_TextAppearanceHeadline4</item>
+        <item name="textAppearanceHeadline5">@style/App_TextAppearanceHeadline5</item>
+        <item name="textAppearanceHeadline6">@style/App_TextAppearanceHeadline6</item>
+        <item name="textAppearanceBody1">@style/App_TextAppearanceBody1</item>
+        <item name="textAppearanceBody2">@style/App_TextAppearanceBody2</item>
+        <item name="textAppearanceButton">@style/App_TextAppearanceButton</item>
+        <item name="textAppearanceCaption">@style/App_TextAppearanceCaption</item>
+        <item name="textAppearanceSubtitle1">@style/App_TextAppearanceSubtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/App_TextAppearanceSubtitle2</item>
+    </style>
+
+</resources>

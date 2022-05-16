@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ItemSettingView">
+        <attr name="title" format="string"/>
+        <attr name="showSwitch" format="boolean"/>
+        <attr name="title2" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ProgressStateView">
+        <attr name="psv_backgroundColor" format="color"/>
+        <attr name="psv_radius" format="dimension"/>
+        <attr name="psv_itemBackgroundColor" format="color"/>
+        <attr name="psv_itemSelectedBackgroundColor" format="color"/>
+        <attr name="psv_itemRadius" format="dimension"/>
+        <attr name="psv_textColor" format="color"/>
+        <attr name="psv_textSize" format="dimension"/>
+        <attr name="psv_textBallSize" format="dimension"/>
+        <attr name="psv_padding" format="dimension"/>
+        <attr name="psv_max" format="integer"/>
+    </declare-styleable>
+
+</resources>
