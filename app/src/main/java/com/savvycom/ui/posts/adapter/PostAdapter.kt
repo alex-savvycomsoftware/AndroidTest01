@@ -8,7 +8,7 @@ import com.savvycom.core.base.BaseListAdapter
 import com.savvycom.data.response.PostModel
 import com.savvycom.databinding.ItemPostBinding
 
-class PostAdapter : BaseListAdapter<PostModel, ItemPostBinding>(postDiffUtils) {
+class PostAdapter(onItemClick: ((PostModel, Int) -> Unit)) : BaseListAdapter<PostModel, ItemPostBinding>(postDiffUtils, onItemClick) {
     override fun bindData(holder: BaseHolder<ItemPostBinding>, data: PostModel, position: Int) {
         holder.binding?.post = data
     }

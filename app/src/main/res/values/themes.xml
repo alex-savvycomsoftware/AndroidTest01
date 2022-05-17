@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+
         <item name="textAppearanceHeadline1">@style/App_TextAppearanceHeadline1</item>
         <item name="textAppearanceHeadline2">@style/App_TextAppearanceHeadline2</item>
         <item name="textAppearanceHeadline3">@style/App_TextAppearanceHeadline3</item>

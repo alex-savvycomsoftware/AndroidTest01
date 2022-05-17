@@ -1,6 +1,7 @@
 package com.savvycom.di.module
 
 import com.savvycom.MainViewModel
+import com.savvycom.ui.comments.CommentViewModel
 import com.savvycom.ui.posts.PostViewModel
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -13,5 +14,8 @@ val viewModelModule = module {
     }
     viewModel {
         PostViewModel(get())
+    }
+    viewModel {
+        CommentViewModel(get())
     }
 }

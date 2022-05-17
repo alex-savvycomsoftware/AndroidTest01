@@ -4,7 +4,9 @@ import com.savvycom.R
 import com.savvycom.base.BaseFragment
 import com.savvycom.core.base.BaseBindingFragment
 import com.savvycom.core.navigation.NavigationController
+import com.savvycom.data.response.PostModel
 import com.savvycom.databinding.FragmentPostBinding
+import com.savvycom.ui.comments.CommentFragment
 import com.savvycom.ui.posts.adapter.PostAdapter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -26,7 +28,7 @@ class PostFragment : BaseFragment<FragmentPostBinding, PostViewModel>() {
     private lateinit var mAdapter: PostAdapter
 
     override fun init() {
-        mAdapter = PostAdapter()
+        mAdapter = PostAdapter(this::onItemClick)
         binding.rvPosts.adapter = mAdapter
 
         initListeners()
@@ -49,5 +51,9 @@ class PostFragment : BaseFragment<FragmentPostBinding, PostViewModel>() {
         binding.refreshLayout.setOnRefreshListener {
             viewModel.getListPost(true)
         }
+    }
+
+    private fun onItemClick(data: PostModel, position: Int) {
+        getNavigationController()?.pushScreen(CommentFragment.newInstance(data), false)
     }
 }

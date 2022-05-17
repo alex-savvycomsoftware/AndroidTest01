@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/tool_bar"
+            android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
@@ -23,16 +23,16 @@
             app:title="@string/title_post" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/refresh_layout"
+            android:id="@+id/refreshLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tool_bar">
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_posts"
+                android:id="@+id/rvPosts"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -50,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 
         <include
             isVisible="@{viewModel.isLoading &amp; !viewModel.isRefreshing}"
@@ -60,6 +60,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
