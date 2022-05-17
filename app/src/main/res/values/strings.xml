@@ -4,5 +4,6 @@
     <string name="title_post">Post</string>
     <string name="title_comment">Comment</string>
     <string name="title_comment_data">Comments:</string>
+    <string name="hint_search">Search...</string>
 
 </resources>

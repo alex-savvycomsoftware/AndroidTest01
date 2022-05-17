@@ -22,6 +22,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:title="@string/title_post" />
 
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginVertical="@dimen/dp_10"
+            android:hint="@string/hint_search"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            />
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/refreshLayout"
             android:layout_width="0dp"
@@ -29,7 +41,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/edtSearch">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPosts"

@@ -16,10 +16,17 @@
 package com.savvycom.core.extensions
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import androidx.annotation.CheckResult
+import androidx.databinding.adapters.SearchViewBindingAdapter.setOnQueryTextListener
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.*
 
 fun EditText.content() = text?.toString()?.trim() ?: ""
 
@@ -71,4 +78,23 @@ inline fun View.afterMeasured(crossinline block: () -> Unit) {
             }
         })
     }
+}
+
+@ExperimentalCoroutinesApi
+@CheckResult
+fun EditText.textChanges(): StateFlow<String> {
+
+    val query = MutableStateFlow("")
+
+    addTextChangedListener(object : TextWatcher {
+
+        override fun afterTextChanged(s: Editable?) = Unit
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            query.value = s?.toString() ?: ""
+        }
+    })
+
+    return query
+
 }
