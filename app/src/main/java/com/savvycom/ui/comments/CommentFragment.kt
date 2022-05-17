@@ -1,6 +1,7 @@
 package com.savvycom.ui.comments
 
 import android.os.Bundle
+import android.view.View
 import com.savvycom.R
 import com.savvycom.base.BaseFragment
 import com.savvycom.data.response.PostModel
@@ -9,6 +10,7 @@ import com.savvycom.ui.posts.adapter.CommentAdapter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 @FlowPreview
 @ExperimentalCoroutinesApi
@@ -36,6 +38,8 @@ class CommentFragment : BaseFragment<FragmentCommentBinding, CommentViewModel>()
         binding.viewModel = viewModel
         viewModel.postData.value = arguments?.getParcelable(ARG_POST)
         binding.rvComments.adapter = mAdapter
+        binding.toolBar.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolBar.setNavigationOnClickListener { requireActivity().onBackPressed() }
         initListeners()
         viewModel.getListComment()
     }

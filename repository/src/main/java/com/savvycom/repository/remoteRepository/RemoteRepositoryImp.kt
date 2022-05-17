@@ -1,4 +1,4 @@
-package com.savvycom.repository.remoteRemository
+package com.savvycom.repository.remoteRepository
 
 import com.savvycom.data.response.CommentModel
 import com.savvycom.data.response.PostModel

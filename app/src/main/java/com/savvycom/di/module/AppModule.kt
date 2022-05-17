@@ -1,11 +1,14 @@
 package com.savvycom.di.module
 
 import android.app.Application
+import android.content.Context
+import androidx.room.Room
 import com.savvycom.BuildConfig
+import com.savvycom.repository.component.AppDatabase
 import com.savvycom.repository.component.AppPreferences
+import com.savvycom.repository.component.DatabaseConfiguration
 import com.savvycom.repository.network.getRetrofitBuilder
 import com.savvycom.repository.network.service.ApiService
-import com.savvycom.repository.remoteRemository.RemoteRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
@@ -13,6 +16,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
 
 val appModule = module {
@@ -29,6 +33,10 @@ val appModule = module {
 
     single {
         providePreferences(androidApplication())
+    }
+
+    single {
+        provideDatabase(androidApplication())
     }
 }
 
@@ -55,3 +63,11 @@ private fun provideApiService(retrofit: Retrofit): ApiService =
     retrofit.create(ApiService::class.java)
 
 private fun providePreferences(app: Application): AppPreferences = AppPreferences(app)
+
+private fun provideDatabase(app: Application): AppDatabase {
+    return Room.databaseBuilder(
+        app.applicationContext,
+        AppDatabase::class.java,
+        DatabaseConfiguration.name
+    ).build()
+}

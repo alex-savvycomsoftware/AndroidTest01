@@ -24,6 +24,9 @@ class PostViewModel(private val repository: Repository) : BaseViewModel() {
             if (response.isSuccess) {
                 listPost.postValue(response.data ?: ArrayList())
                 isEmpty.postValue(response.data.isNullOrEmpty())
+                if (!response.data.isNullOrEmpty()) {
+                    repository.insertListPost(response.data!!)
+                }
             } else {
                 errorCode.postValue(response.code ?: 0)
             }

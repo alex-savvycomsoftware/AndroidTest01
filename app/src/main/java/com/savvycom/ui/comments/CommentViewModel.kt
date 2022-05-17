@@ -29,6 +29,9 @@ class CommentViewModel(private val repository: Repository) : BaseViewModel() {
                 if (response.isSuccess) {
                     listComment.postValue(response.data ?: ArrayList())
                     isEmpty.postValue(response.data.isNullOrEmpty())
+                    if (!response.data.isNullOrEmpty()) {
+                        repository.insertListComment(response.data!!)
+                    }
                 } else {
                     errorCode.postValue(response.code ?: 0)
                 }

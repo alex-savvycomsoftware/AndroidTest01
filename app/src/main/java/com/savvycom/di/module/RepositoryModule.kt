@@ -6,8 +6,8 @@ import com.savvycom.repository.baseRepository.BaseRemoteRepository
 import com.savvycom.repository.baseRepository.BaseRemoteRepositoryImp
 import com.savvycom.repository.localRepository.LocalRepository
 import com.savvycom.repository.localRepository.LocalRepositoryImp
-import com.savvycom.repository.remoteRemository.RemoteRepository
-import com.savvycom.repository.remoteRemository.RemoteRepositoryImp
+import com.savvycom.repository.remoteRepository.RemoteRepository
+import com.savvycom.repository.remoteRepository.RemoteRepositoryImp
 import org.koin.dsl.module
 
 val repoModule = module {
@@ -21,7 +21,7 @@ val repoModule = module {
     }
 
     single<LocalRepository> {
-        return@single LocalRepositoryImp(get())
+        return@single LocalRepositoryImp(get(), get())
     }
 
     single<Repository> {

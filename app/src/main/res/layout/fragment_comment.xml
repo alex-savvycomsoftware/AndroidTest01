@@ -73,5 +73,15 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <include
+            isVisible="@{viewModel.isLoading &amp; !viewModel.isRefreshing}"
+            layout="@layout/layout_progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
